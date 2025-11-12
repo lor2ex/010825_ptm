@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dac58aaf-1241-444f-a7a8-27918e6898b1" name="Changes" comment="db_hw14" />
+    <list default="true" id="dac58aaf-1241-444f-a7a8-27918e6898b1" name="Changes" comment="db_hw14">
+      <change afterPath="$PROJECT_DIR$/db/15/.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,7 +82,7 @@
       <workItem from="1762704362360" duration="285000" />
       <workItem from="1762712435767" duration="655000" />
       <workItem from="1762979815574" duration="417000" />
-      <workItem from="1762980241080" duration="356000" />
+      <workItem from="1762980241080" duration="676000" />
     </task>
     <task id="LOCAL-00001" summary="hw24">
       <option name="closed" value="true" />
@@ -114,7 +116,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762980404121</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="db_hw14">
+      <option name="closed" value="true" />
+      <created>1762980679374</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1762980679374</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
