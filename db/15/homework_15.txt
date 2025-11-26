@@ -1,0 +1,103 @@
+/* 1. Коллекция imdb : Используя оператор $size, найдите фильмы,
+написанные 3 сценаристами (writers) и снятые 2 режиссерами (directors) */
+
+result = client['ich']['imdb'].aggregate([
+    {
+        '$match': {
+            'writers': {
+                '$size': 3
+            }, 
+            'directors': {
+                '$size': 2
+            }
+        }
+    }
+])
+
+/* 2. Коллекция bookings: Найдите адрес нахождения автомобиля с vin WME4530421Y135045
+
+result = client['ich']['bookings'].aggregate([
+    {
+        '$match': {
+            'vin': 'WME4530421Y135045'
+        }
+    }, {
+        '$sort': {
+            'final_date': -1
+        }
+    }, {
+        '$project': {
+            '_id': 0, 
+            'final_address': 1
+        }
+    }
+])
+
+
+'$limit': 1 ?
+
+/* 3. Коллекция bookings: подсчитайте, у скольких автомобилей
+при окончании аренды закончилось топливо (final_fuel) */
+
+result = client['ich']['bookings'].aggregate([
+    {
+        '$match': {
+            'final_fuel': 0
+        }
+    }, {
+        '$project': {
+            '_id': 0
+        }
+    }, {
+        '$count': 'count_cars'
+    }
+])
+
+/* 4. Коллекция bookings: найдите номерной знак и vin номер авто,
+с самым большим пробегом (distance) */
+
+result = client['ich']['bookings'].aggregate([
+    {
+        '$sort': {
+            'distance': -1
+        }
+    }, {
+        '$limit': 1
+    }, {
+        '$project': {
+            '_id': 0, 
+            'vin': 1, 
+            'plate': 1
+        }
+    }
+])
+
+// 5. Коллекция imdb. Найдите фильм с участием "Brad Pitt" с самым высоким рейтингом (imdb.rating)
+
+result = client['ich']['imdb'].aggregate([
+    {
+        '$match': {
+            'cast': {
+                '$in': [
+                    'Brad Pitt'
+                ]
+            }, 
+            'imdb.rating': {
+                '$ne': ''
+            }
+        }
+    }, {
+        '$sort': {
+            'imdb.rating': -1
+        }
+    }, {
+        '$limit': 1
+    }, {
+        '$project': {
+            '_id': 0, 
+            'title': 1, 
+            'imdb.rating': 1, 
+            'year': 1
+        }
+    }
+])
