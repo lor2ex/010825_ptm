@@ -53,7 +53,7 @@ def get_info():
     report = {
         "total_students": total_students,
         "average_enrollment_age": average_age,
-        "students_per_course": dict(course_counter),  # ← dict()
+        "students_per_course": dict(course_counter),
     }
 
     write_json("student_courses_report.json", report)
