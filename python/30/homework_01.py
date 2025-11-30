@@ -41,7 +41,7 @@ def get_info():
         birth = dt.strptime(student["birth_date"], "%d.%m.%Y")
         enroll = dt.strptime(student["enrollment_date"], "%d.%m.%Y")
         age = rld(enroll, birth).years
-        ages.append(age)  # ← ДОБАВИЛИ
+        ages.append(age)
 
     average_age = sum(ages) / len(ages)
 
