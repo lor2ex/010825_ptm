@@ -43,7 +43,7 @@ def get_info():
         age = rld(enroll, birth).years
         ages.append(age)  # ← ДОБАВИЛИ
 
-    average_age = sum(ages) / len(ages)  # ← ПОСЛЕ цикла
+    average_age = sum(ages) / len(ages)
 
     course_counter = Counter()
     for student in students:
