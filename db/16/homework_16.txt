@@ -1,0 +1,150 @@
+// 1. Найдите средний возраст из коллекции ich.US_Adult_Income
+
+result = client['ich']['US_Adult_Income'].aggregate([
+    {
+        '$group': {
+            '_id': None, 
+            'avg_age': {
+                '$avg': '$age'
+            }
+        }
+    }, {
+        '$project': {
+            '_id': 0, 
+            'avg_age': {
+                '$round': [
+                    '$avg_age', 2
+                ]
+            }
+        }
+    }
+])
+
+/* 2. Поменяв подключение к базе данных, создать коллекцию orders_NAME (для уникальности - добавим ваше имя в название) со свойствами id, customer, product, amount, city, используя следующие данные:
+
+1 Olga Apple 15.55 Berlin
+2 Anna Apple 10.05 Madrid
+3 Olga Kiwi 9.6 Berlin
+4 Anton Apple 20 Roma
+5 Olga Banana 8 Madrid
+6 Petr Orange 18.3 Paris */
+
+// 3. Найти сколько всего было совершено покупок
+
+result = client['ich_edit']['010825_al'].aggregate([
+    {
+        '$count': 'total_purchases'
+    }
+])
+
+// 4. Найти сколько всего раз были куплены яблоки
+
+result = client['ich_edit']['010825_al'].aggregate([
+    {
+        '$match': {
+            'product': 'Apple'
+        }
+    }, {
+        '$group': {
+            '_id': '$product', 
+            'apple_count': {
+                '$sum': 1
+            }
+        }
+    }, {
+        '$project': {
+            '_id': 0, 
+            'product': '$_id', 
+            'count': '$apple_count'
+        }
+    }
+])
+
+// 5. Вывести идентификаторы трех самые дорогих покупок
+
+result = client['ich_edit']['010825_al'].aggregate([
+    {
+        '$sort': {
+            'amount': -1
+        }
+    }, {
+        '$limit': 3
+    }, {
+        '$project': {
+            '_id': 1, 
+            'amount': 1
+        }
+    }
+])
+
+// 6. Найти сколько всего покупок было совершено в Берлине
+
+result = client['ich_edit']['010825_al'].aggregate([
+    {
+        '$match': {
+            'city': 'Berlin'
+        }
+    }, {
+        '$count': 'purchases_in_berlin'
+    }
+])
+
+// 7. Найти количество покупок яблок в городах Берлин и Мадрид
+
+result = client['ich_edit']['010825_al'].aggregate([
+    {
+        '$match': {
+            'product': 'Apple', 
+            'city': {
+                '$in': [
+                    'Berlin', 'Madrid'
+                ]
+            }
+        }
+    }, {
+        '$count': 'Apple_purchases'
+    }
+])
+
+/* 8. Найти сколько было потрачено каждым покупателем
+(подсказка: используем $group и total: {$sum: '$amount'} ) */
+
+result = client['ich_edit']['010825_al'].aggregate([
+    {
+        '$group': {
+            '_id': '$customer', 
+            'purchases': {
+                '$sum': 1
+            }, 
+            'total': {
+                '$sum': '$amount'
+            }
+        }
+    }, {
+        '$project': {
+            '_id': 0, 
+            'customer': '$_id', 
+            'total': 1
+        }
+    }
+])
+
+/* 9. Найти в каких городах совершала покупки Ольга
+(подсказка: используем $match customer: 'Olga' и $group _id: '$city') */
+
+result = client['ich_edit']['010825_al'].aggregate([
+    {
+        '$match': {
+            'customer': 'Olga'
+        }
+    }, {
+        '$group': {
+            '_id': '$city'
+        }
+    }, {
+        '$project': {
+            '_id': 0, 
+            'city': '$_id'
+        }
+    }
+])
