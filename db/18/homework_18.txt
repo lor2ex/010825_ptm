@@ -1,0 +1,121 @@
+/* 1. Из коллекции Atlas: sample_airbnb.listingsAndReviews найдите среднюю цену за сутки проживания на Гавайских островах. Островов несколько, поэтому либо используем {'address.location': {$geoWithin: { $centerSphere …. , либо перечисляем все возможные острова в поле market.
+Подсказка - нам понадобится 2 этапа агрегации : $match и $group
+*/
+
+result = client['sample_airbnb']['listingsAndReviews'].aggregate([
+    {
+        '$match': {
+            'address.location': {
+                '$geoWithin': {
+                    '$centerSphere': [
+                        [
+                            -157.8583, 21.3069
+                        ], 0.0847
+                    ]
+                }
+            }
+        }
+    }, {
+        '$group': {
+            '_id': None, 
+            'averagePrice': {
+                '$avg': '$price'
+            }
+        }
+    }, {
+        '$project': {
+            '_id': 0, 
+            'averagePrice': {
+                '$round': [
+                    '$averagePrice', 2
+                ]
+            }
+        }
+    }
+])
+
+
+####### 2
+
+result = client['sample_airbnb']['listingsAndReviews'].aggregate([
+    {
+        '$match': {
+            'address.market': {
+                '$in': [
+                    'Oahu', 'Hawaii', 'Maui', 'Kauai', 'Molokai', 'Lanai', 'Niihau', 'Big Island'
+                ]
+            }
+        }
+    }, {
+        '$group': {
+            '_id': None, 
+            'averagePrice': {
+                '$avg': '$price'
+            }
+        }
+    }, {
+        '$project': {
+            '_id': 0, 
+            'averagePrice': {
+                '$round': [
+                    '$averagePrice', 2
+                ]
+            }
+        }
+    }
+])
+
+/* 2.1. Подсчитайте в коллекции Atlas: sample_mflix.movies,
+ сколько фильмов имеют imdb рейтинг выше 8 и выходили в период с 2015 до 2023 года.*/
+
+result = client['sample_mflix']['movies'].aggregate([
+    {
+        '$match': {
+            'type': 'movie', 
+            'imdb.rating': {
+                '$type': 'number', 
+                '$gt': 8
+            }, 
+            'year': {
+                '$gte': 2015, 
+                '$lte': 2023
+            }
+        }
+    }, {
+        '$count': 'movies_best_rating'
+    }
+])
+
+/* 2.2. Какой из фильмов, вышедших в период с 2015 по 2023 имеет самый высокий рейтинг? */
+
+result = client['sample_mflix']['movies'].aggregate([
+    {
+        '$match': {
+            'type': 'movie', 
+            'imdb.rating': {
+                '$type': 'number', 
+                '$gt': 8
+            }, 
+            'year': {
+                '$gte': 2015, 
+                '$lte': 2023
+            }
+        }
+    }, {
+        '$sort': {
+            'imdb.rating': -1
+        }
+    }, {
+        '$limit': 1
+    }, {
+        '$project': {
+            '_id': 0, 
+            'title': 1, 
+            'imdb': '$imdb.rating', 
+            'year': 1
+        }
+    }
+])
+
+
+
