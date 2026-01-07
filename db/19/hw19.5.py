@@ -37,7 +37,6 @@ def run_migration():
                 db_edit[target_name].insert_many(data)
                 print(f"Готово! Данные импортированы в ich_edit.{target_name}")
 
-        # Сохраняем результаты
         save_to_edit(top_spotify, "010825_al_top20spotify")
         save_to_edit(top_youtube, "010825_al_top20youtube")
 
