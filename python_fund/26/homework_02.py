@@ -7,7 +7,7 @@
 - Если пользователь подтверждает, удаляет их.
 
 Пример запуска
-python script.py /home/user/PycharmProjects/project1 .log
+python_fund script.py /home/user/PycharmProjects/project1 .log
 
 Пример вывода:
 Найдены файлы с расширением '.log':
@@ -49,7 +49,7 @@ for file in files_log:
         f.write("")
 
 if len(sys.argv) != 3:
-    print("Использование: python script.py <директория> <расширение>")
+    print("Использование: python_fund script.py <директория> <расширение>")
     sys.exit(1)
 
 directory = sys.argv[1]
@@ -92,7 +92,7 @@ else:
 # list_of_files = []
 #
 # if len(newargs) < 2:
-#     print("Usage: python HW26.py <dir> <extension>")
+#     print("Usage: python_fund HW26.py <dir> <extension>")
 #     sys.exit(1)
 #
 # if not os.path.isdir(usr_path):

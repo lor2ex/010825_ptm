@@ -7,7 +7,7 @@
     - Отдельно список файлов
 
 Пример запуска:
-python script.py /home/user/documents
+python_fund script.py /home/user/documents
 
 Пример вывода:
 Содержимое директории '/home/user/documents':
@@ -45,7 +45,7 @@ def files_and_folders(path):
         print("\n".join(f"- {file}" for file in files))
 
 if len(sys.argv) != 2:
-    print("Использование: python homework_01.py <директория>")
+    print("Использование: python_fund homework_01.py <директория>")
     sys.exit(1)
 
 files_and_folders(sys.argv[1])
@@ -60,7 +60,7 @@ files_and_folders(sys.argv[1])
 # usrargs = sys.argv
 #
 # if len(usrargs) != 2:
-#     print("Usage: python HW26.py <dir>")
+#     print("Usage: python_fund HW26.py <dir>")
 #     sys.exit(1)
 #
 # path = usrargs[1]
@@ -106,7 +106,7 @@ import sys
 # usrargs = sys.argv
 #
 # if len(usrargs) != 2:
-#     print("Usage: python HW26.py <dir>")
+#     print("Usage: python_fund HW26.py <dir>")
 #     sys.exit(1)
 #
 # path = usrargs[1]
