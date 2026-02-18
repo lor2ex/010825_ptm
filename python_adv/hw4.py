@@ -1,5 +1,4 @@
-from sqlalchemy import create_engine, select, or_, not_, and_, desc, func
-from sqlalchemy.orm import sessionmaker, aliased
+from sqlalchemy import select, func
 
 from hw3 import *
 
