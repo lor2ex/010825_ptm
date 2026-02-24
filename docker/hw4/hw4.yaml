@@ -1,0 +1,57 @@
+services:
+  web:
+    image: nginx:latest
+    container_name: web_nginx
+    restart: always
+    ports:
+      - "8080:80"
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    networks:
+      - mynetwork
+
+  redis:
+    image: redis:latest
+    container_name: cache_redis
+    restart: always
+    networks:
+      - mynetwork
+
+
+  mysql:
+    image: mysql:8.0
+    container_name: db_mysql
+    restart: always
+    volumes:
+      - mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "mysqladmin",
+          "ping",
+          "-h", "localhost",
+          "-u", "root",
+          "-p$${MYSQL_ROOT_PASSWORD}"
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - mynetwork
+
+volumes:
+  mysql_data:
+
+networks:
+  mynetwork:
+    driver: bridge
