@@ -1,4 +1,5 @@
 from sqlalchemy import select, func
+from sqlalchemy.orm import joinedload
 
 from hw3 import *
 
@@ -61,20 +62,43 @@ session.commit()
 Для каждой категории извлеките и выведите все 
 связанные с ней продукты, включая их названия и цены."""
 
-categories = session.query(Category).all()
+with Session() as session:
+    stmt = (
+        select(Category)
+        .options(joinedload(Category.products))  # joinedload - ленивая подгрузка(если есть вложеннность-обязательна, ибо грозит эфект n+1(перегрузка базы)
+    )
+    result = session.scalars(stmt).unique().all()
 
-for cat in categories:
-    print(cat.id, cat.name, cat.description)
-    for product in cat.products:
-        print("Продукты:", product.id, product.name, product.price)
+    for cat in result:
+        print(f"Категория: {cat.name}")
+
+        for prod in cat.products:
+            print(f" -- Продукт: {prod.name}, Цена: {prod.price}")
 
 
-# categories = session.query(Category).join(Product).all()
+# var 2
+# categories = session.query(Category).all()
+# # --- Teil 3: Alternative Abfrage-Methoden, другие варианты строки выше: ---
+# # Diese Zeilen zeigen verschiedene Wege, um alle Kategorien zu laden:
 #
+# # 1. Empfohlener 2.0 Stil (Direkt über session.scalars)
+categories = session.scalars(select(Category)).all()
+#
+# # 2. Klassischer 1.x Stil (session.query - veraltet, aber noch unterstützt)
+# categories = session.query(Category).all()
+#
+# # 3. Ausführlicher 2.0 Stil (Über session.execute)
+# categories = session.execute(select(Category)).scalars()
+
+for c in categories:
+    print(c.id, c.name, c.description)
+
+# var 2 cicle for
 # for cat in categories:
 #     print(cat.id, cat.name, cat.description)
 #     for product in cat.products:
 #         print("Продукты:", product.id, product.name, product.price)
+
 
 """Задача 3: Обновление данных
 Найдите в таблице products первый продукт с названием "Смартфон". 
@@ -93,6 +117,16 @@ if result:
     session.commit()
     print(result.name, result.price)
 
+
+# var 2
+# product = session.get(Products, ident=1)
+# if product:
+#     product.price = 349.99
+#     session.commit()
+#
+# product = session.get(Products, ident=1)
+# if product:
+#     print(product.name, product.price)
 """Задача 4: Агрегация и группировка
 Используя агрегирующие функции и группировку, подсчитайте общее 
 количество продуктов в каждой категории."""
