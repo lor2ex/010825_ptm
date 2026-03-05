@@ -1,0 +1,92 @@
+[
+  {
+    "domain": ".globalsqa.com",
+    "expiry": 1807302255,
+    "httpOnly": false,
+    "name": "_ga_7X7CX2NTS7",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "GS2.1.s1772742249$o1$g0$t1772742255$j54$l0$h0"
+  },
+  {
+    "domain": ".globalsqa.com",
+    "expiry": 1806438251,
+    "httpOnly": false,
+    "name": "__gpi",
+    "path": "/",
+    "sameSite": "None",
+    "secure": true,
+    "value": "UID=00001370573b671e:T=1772742251:RT=1772742251:S=ALNI_MZMP57qEjQgdcdNyHPQGwtAHrDPQQ"
+  },
+  {
+    "domain": ".globalsqa.com",
+    "expiry": 1772828649,
+    "httpOnly": false,
+    "name": "_gid",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "GA1.2.415546946.1772742250"
+  },
+  {
+    "domain": ".globalsqa.com",
+    "expiry": 1807302249,
+    "httpOnly": false,
+    "name": "_ga",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "GA1.2.538038633.1772742250"
+  },
+  {
+    "domain": ".globalsqa.com",
+    "expiry": 1772742309,
+    "httpOnly": false,
+    "name": "_gat_gtag_UA_67337609_1",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "1"
+  },
+  {
+    "domain": ".globalsqa.com",
+    "expiry": 1806438251,
+    "httpOnly": false,
+    "name": "__gads",
+    "path": "/",
+    "sameSite": "None",
+    "secure": true,
+    "value": "ID=2436801fb801ad2c:T=1772742251:RT=1772742251:S=ALNI_Macd3lHtsrMyBHpVG5FLpIONZE2hg"
+  },
+  {
+    "domain": ".globalsqa.com",
+    "expiry": 1788294251,
+    "httpOnly": false,
+    "name": "__eoi",
+    "path": "/",
+    "sameSite": "None",
+    "secure": true,
+    "value": "ID=d1378296f0eb9ccc:T=1772742251:RT=1772742251:S=AA-Afja2YF5VEcqlrIU-8D_9E6iO"
+  },
+  {
+    "domain": ".globalsqa.com",
+    "expiry": 1806438251,
+    "httpOnly": false,
+    "name": "FCCDCF",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "%5Bnull%2Cnull%2Cnull%2C%5B%22CQgl8sAQgl8sAEsACBRUCUFoAP_gAEPgABBoK1IB_C7EbCFCiDJ3IKMEMAhHABBAYsAwAAYBAwAADBIQIAQCgkEYBASAFCACCAAAKASBAAAgCAAAAUAAIAAFAABAAAwAIBAIIAAAgAAAAEAIAAAACIAAEQCAAAAEAEAAkAgAAAIASAAAAAAAAACBAAAAAAAAAAAAAAAABAEAAQAAQAAAAAAAiAAAAAAAABAIAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAABAAAAAAAQWEQD-F2I2EKFEGCuQUYIYBCuACAAxYBgAAwCBgAAGCQgQAgFJIIkCAEAIEAAEAAAQAgCAABQEBAAAIAAAAAqAACAABgAQCAQAIABAAAAgIAAAAAAEQAAIgEAAAAIAIABABAAAAQAkAAAAAAAAAECAAAAAAAAAAAAAAAAAAIAAEABgAAAAAABEAAAAAAAACAQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAA.ILCIB_C7EbCFCiDJ3IKMEMAhXABBAYsAwAAYBAwAADBIQIAQCkkEaBASAFCACCAAAKASBAAAoCAgAAUAAIAAVAABAAAwAIBAIIEAAgAAAQEAIAAAACIAAEQCAAAAEAEAAkAgAAAIASAAAAAAAAACBAAAAAAAAAAAAAAAABAEAASAAwAAAAAAAiAAAAAAAABAIEAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAABAAAAAAAQAAAE%22%2C%222~61.89.122.161.184.196.230.314.442.445.494.550.576.827.1029.1033.1046.1047.1051.1097.1126.1166.1301.1342.1415.1725.1765.1942.1958.1987.2068.2072.2074.2107.2213.2219.2223.2224.2328.2331.2387.2416.2501.2567.2568.2575.2657.2686.2778.2869.2878.2908.2920.2963.3005.3023.3126.3234.3235.3253.3309.3731.6931.8931.13731.15731.33931~dv.%22%2C%22C8356934-FD34-48A2-9A3F-2501C3F2B144%22%5D%2Cnull%2Cnull%2C%5B%5B32%2C%22%5B%5C%2273e19ae4-6188-47b9-b230-8e8261991991%5C%22%2C%5B1772742249%2C809000000%5D%5D%22%5D%5D%5D"
+  },
+  {
+    "domain": ".globalsqa.com",
+    "expiry": 1804278255,
+    "httpOnly": false,
+    "name": "FCNEC",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "%5B%5B%22AKsRol8ibvlPHUhP3_Y4lRjaLLbwC32OQ4bdoJ6fPUJJywdEYmQde8SzssbSAJRIgJcZQxULAviR14VpdV1gmGr_ygEaRn_nx_FG9UdumVELjJ4SkKxRe3t5XNYZwU1uvPmUTjBxxTKLEj-j8iO7f3bCzdPp3H7AmA%3D%3D%22%5D%5D"
+  }
+]
