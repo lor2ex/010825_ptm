@@ -1,0 +1,96 @@
+aws ec2 create-security-group --group-name 010825-al-sg --description "Security Group for MySQL and HTTPS and SSH" --profile ich 
+
+aws ec2 authorize-security-group-ingress --group-id sg-0002f976c4eef30f8 --ip-permissions "IpProtocol=tcp,FromPort=3306,ToPort=3306,IpRanges=[{CidrIp=0.0.0.0/0,Description=mysql}]" --profile ich 
+
+{                                                                                                                  
+    "Return": true,
+    "SecurityGroupRules": [
+        {
+            "SecurityGroupRuleId": "sgr-0454d26b5e281c373",
+            "GroupId": "sg-0002f976c4eef30f8",
+            "GroupOwnerId": "600627349446",
+            "IsEgress": false,
+            "IpProtocol": "tcp",
+            "FromPort": 3306,
+            "ToPort": 3306,
+            "CidrIpv4": "0.0.0.0/0",
+            "Description": "mysql",
+            "SecurityGroupRuleArn": "arn:aws:ec2:eu-central-1:600627349446:security-group-rule/sgr-0454d26b5e281c373"
+        }
+    ]
+}  
+
+aws ec2 authorize-security-group-ingress --group-id sg-0002f976c4eef30f8 --ip-permissions "IpProtocol=tcp,FromPort=443,ToPort=443,IpRanges=[{CidrIp=0.0.0.0/0,Description=https}]" --profile ich       
+                                                                                       
+{                                                                                                                  
+    "Return": true,
+    "SecurityGroupRules": [
+        {
+            "SecurityGroupRuleId": "sgr-00a1fd8c77abb6fc3",
+            "GroupId": "sg-0002f976c4eef30f8",
+            "GroupOwnerId": "600627349446",
+            "IsEgress": false,
+            "IpProtocol": "tcp",
+            "FromPort": 443,
+            "ToPort": 443,
+            "CidrIpv4": "0.0.0.0/0",
+            "Description": "https",
+            "SecurityGroupRuleArn": "arn:aws:ec2:eu-central-1:600627349446:security-group-rule/sgr-00a1fd8c77abb6fc3"
+        }
+    ]
+}                                                     
+
+aws ec2 describe-security-groups --group-ids sg-0002f976c4eef30f8 --region eu-central-1 --query 'SecurityGroups[*].IpPermissions' --output json --profile ich             
+[                                                                                                                  
+    [
+        {
+            "IpProtocol": "tcp",
+            "FromPort": 22,
+            "ToPort": 22,
+            "UserIdGroupPairs": [],
+            "IpRanges": [
+                {
+                    "Description": "SSH My IP",
+                    "CidrIp": "219.100.37.239/32"
+                }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": []
+        },
+        {
+            "IpProtocol": "tcp",                                                                                   
+            "FromPort": 3306,                                                                                      
+            "ToPort": 3306,                                                                                        
+            "UserIdGroupPairs": [],                                                                                
+            "IpRanges": [                                                                                          
+                {                                                                                                  
+                    "Description": "mysql",                                                                        
+                    "CidrIp": "0.0.0.0/0"                                                                          
+                }                                                                                                  
+            ],                                                                                                     
+            "Ipv6Ranges": [],                                                                                      
+            "PrefixListIds": []                                                                                    
+        },                                                                                                         
+        {                                                                                                          
+            "IpProtocol": "tcp",                                                                                   
+            "FromPort": 443,                                                                                       
+            "ToPort": 443,                                                                                         
+            "UserIdGroupPairs": [],                                                                                
+            "IpRanges": [                                                                                          
+                {                                                                                                  
+                    "Description": "https",                                                                        
+                    "CidrIp": "0.0.0.0/0"                                                                          
+                }                                                                                                  
+            ],                                                                                                     
+            "Ipv6Ranges": [],                                                                                      
+            "PrefixListIds": []                                                                                    
+        }                                                                                                          
+    ]                                                                                                              
+] 
+
+aws ec2 delete-security-group --group-id sg-0002f976c4eef30f8 --profile ich
+
+{                                                                                                                  
+    "Return": true,
+    "GroupId": "sg-0002f976c4eef30f8"
+}
