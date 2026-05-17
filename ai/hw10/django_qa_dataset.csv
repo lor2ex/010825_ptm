@@ -1,0 +1,101 @@
+text,text_clean,label
+Как добавить поле в модель Django?,как добавить поле в модель django?,model
+Что такое ForeignKey и когда его использовать?,что такое foreignkey и когда его использовать?,model
+Как настроить soft delete в модели?,как настроить soft delete в модели?,model
+Как сделать кастомный менеджер модели?,как сделать кастомный менеджер модели?,model
+Что такое Meta class в Django модели?,что такое meta class в django модели?,model
+Как добавить unique_together в модель?,как добавить unique_together в модель?,model
+Как работает AbstractUser?,как работает abstractuser?,model
+Как создать модель с self-referencing FK?,как создать модель с self-referencing fk?,model
+Зачем нужен related_name в ForeignKey?,зачем нужен related_name в foreignkey?,model
+Как переопределить метод save() модели?,как переопределить метод save() модели?,model
+Как добавить валидацию на уровне модели?,как добавить валидацию на уровне модели?,model
+Что такое signals в Django?,что такое signals в django?,model
+Как использовать post_save сигнал?,как использовать post_save сигнал?,model
+Как сделать поле с выбором из списка?,как сделать поле с выбором из списка?,model
+Что такое TextChoices?,что такое textchoices?,model
+Как написать вложенный сериализатор?,как написать вложенный сериализатор?,serializer
+В чём разница ModelSerializer и Serializer?,в чём разница modelserializer и serializer?,serializer
+Как добавить кастомную валидацию в сериализаторе?,как добавить кастомную валидацию в сериализаторе?,serializer
+Как сделать поле только для чтения в сериализаторе?,как сделать поле только для чтения в сериализаторе?,serializer
+Как переопределить create() в сериализаторе?,как переопределить create() в сериализаторе?,serializer
+Как скрыть поле пароля в ответе?,как скрыть поле пароля в ответе?,serializer
+Как добавить дополнительное поле в сериализатор?,как добавить дополнительное поле в сериализатор?,serializer
+Что такое SerializerMethodField?,что такое serializermethodfield?,serializer
+Как сериализовать ManyToMany поле?,как сериализовать manytomany поле?,serializer
+Как обрабатывать UniqueConstraint в сериализаторе?,как обрабатывать uniqueconstraint в сериализаторе?,serializer
+Как передать контекст в сериализатор?,как передать контекст в сериализатор?,serializer
+Как валидировать два поля вместе?,как валидировать два поля вместе?,serializer
+Зачем нужен метод validate() в сериализаторе?,зачем нужен метод validate() в сериализаторе?,serializer
+Как сериализовать вложенные объекты?,как сериализовать вложенные объекты?,serializer
+Как написать WriteSerializer и ReadSerializer отдельно?,как написать writeserializer и readserializer отдельно?,serializer
+Как создать ViewSet в DRF?,как создать viewset в drf?,view
+В чём разница APIView и ViewSet?,в чём разница apiview и viewset?,view
+Как добавить кастомный action в ViewSet?,как добавить кастомный action в viewset?,view
+Как фильтровать queryset во view?,как фильтровать queryset во view?,view
+Как настроить пагинацию во view?,как настроить пагинацию во view?,view
+Как ограничить доступ к определённым методам?,как ограничить доступ к определённым методам?,view
+Как переопределить get_queryset?,как переопределить get_queryset?,view
+Как вернуть кастомный ответ из view?,как вернуть кастомный ответ из view?,view
+Как сделать поиск по полю через API?,как сделать поиск по полю через api?,view
+Что такое Router и как его использовать?,что такое router и как его использовать?,view
+Как добавить фильтрацию через django-filter?,как добавить фильтрацию через django-filter?,view
+Как сделать вложенные роутеры?,как сделать вложенные роутеры?,view
+Как переопределить perform_create?,как переопределить perform_create?,view
+Как вернуть разные сериализаторы для list и detail?,как вернуть разные сериализаторы для list и detail?,view
+Как ограничить queryset текущим пользователем?,как ограничить queryset текущим пользователем?,view
+Как настроить JWT аутентификацию в DRF?,как настроить jwt аутентификацию в drf?,auth
+Как сохранить JWT токен в cookie?,как сохранить jwt токен в cookie?,auth
+Что такое refresh token и как его обновить?,что такое refresh token и как его обновить?,auth
+Как настроить logout с blacklist токенов?,как настроить logout с blacklist токенов?,auth
+Как реализовать регистрацию пользователя?,как реализовать регистрацию пользователя?,auth
+Как добавить permissions к view?,как добавить permissions к view?,auth
+В чём разница IsAuthenticated и IsAuthenticatedOrReadOnly?,в чём разница isauthenticated и isauthenticatedorreadonly?,auth
+Как создать кастомный permission?,как создать кастомный permission?,auth
+Как работает TokenAuthentication?,как работает tokenauthentication?,auth
+Как ограничить доступ только для владельца объекта?,как ограничить доступ только для владельца объекта?,auth
+Как настроить CORS для API?,как настроить cors для api?,auth
+Как сделать смену пароля через API?,как сделать смену пароля через api?,auth
+Как использовать simplejwt?,как использовать simplejwt?,auth
+Как защитить эндпоинт от анонимных пользователей?,как защитить эндпоинт от анонимных пользователей?,auth
+Как настроить rate limiting для API?,как настроить rate limiting для api?,auth
+Как создать миграцию в Django?,как создать миграцию в django?,migration
+Что делать если миграции конфликтуют?,что делать если миграции конфликтуют?,migration
+Как откатить миграцию?,как откатить миграцию?,migration
+Как добавить данные через миграцию?,как добавить данные через миграцию?,migration
+Что такое RunPython в миграции?,что такое runpython в миграции?,migration
+Как пересоздать миграции с нуля?,как пересоздать миграции с нуля?,migration
+Почему migrate не применяет изменения?,почему migrate не применяет изменения?,migration
+Как применить миграции в Docker?,как применить миграции в docker?,migration
+Что такое squashmigrations?,что такое squashmigrations?,migration
+Как добавить индекс через миграцию?,как добавить индекс через миграцию?,migration
+Как настроить базу данных MySQL в Django?,как настроить базу данных mysql в django?,settings
+Как подключить .env файл к Django?,как подключить env файл к django?,settings
+Как настроить ALLOWED_HOSTS?,как настроить allowed_hosts?,settings
+Как включить Django DEBUG?,как включить django debug?,settings
+Как настроить CORS в settings.py?,как настроить cors в settingspy?,settings
+Как добавить новое приложение в INSTALLED_APPS?,как добавить новое приложение в installed_apps?,settings
+Как настроить статические файлы?,как настроить статические файлы?,settings
+Как настроить логирование в Django?,как настроить логирование в django?,settings
+Как разделить настройки для dev и prod?,как разделить настройки для dev и prod?,settings
+Как настроить Celery с Django?,как настроить celery с django?,settings
+Как написать unit тест для view?,как написать unit тест для view?,test
+Как использовать APIClient в тестах?,как использовать apiclient в тестах?,test
+Как замокать внешний API в тестах?,как замокать внешний api в тестах?,test
+Как проверить статус ответа в тесте?,как проверить статус ответа в тесте?,test
+Как создать тестовые данные через factory_boy?,как создать тестовые данные через factory_boy?,test
+Как запустить конкретный тест?,как запустить конкретный тест?,test
+Как проверить права доступа в тесте?,как проверить права доступа в тесте?,test
+Как писать интеграционные тесты в DRF?,как писать интеграционные тесты в drf?,test
+Что такое pytest fixtures?,что такое pytest fixtures?,test
+Как тестировать JWT аутентификацию?,как тестировать jwt аутентификацию?,test
+Как настроить Swagger для DRF?,как настроить swagger для drf?,other
+Что такое Django signals?,что такое django signals?,other
+Как подключить Redis к Django?,как подключить redis к django?,other
+Как развернуть Django в Docker?,как развернуть django в docker?,other
+Как настроить Celery beat?,как настроить celery beat?,other
+Что такое middleware в Django?,что такое middleware в django?,other
+Как оптимизировать запросы к базе?,как оптимизировать запросы к базе?,other
+Что такое select_related и prefetch_related?,что такое select_related и prefetch_related?,other
+Как настроить кэширование в Django?,как настроить кэширование в django?,other
+Как работает Django ORM?,как работает django orm?,other

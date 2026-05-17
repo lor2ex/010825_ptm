@@ -1,0 +1,21 @@
+text,label
+как настроить logout с blacklist токенов?,auth
+как проверить статус ответа в тесте?,test
+как применить миграции в docker?,migration
+как добавить индекс через миграцию?,migration
+что такое foreignkey и когда его использовать?,model
+как ограничить queryset текущим пользователем?,view
+в чём разница isauthenticated и isauthenticatedorreadonly?,auth
+как сериализовать manytomany поле?,serializer
+как настроить статические файлы?,settings
+как использовать simplejwt?,auth
+как настроить логирование в django?,settings
+как оптимизировать запросы к базе?,other
+что такое router и как его использовать?,view
+что такое signals в django?,model
+как подключить redis к django?,other
+как использовать apiclient в тестах?,test
+в чём разница modelserializer и serializer?,serializer
+в чём разница apiview и viewset?,view
+как добавить дополнительное поле в сериализатор?,serializer
+что такое meta class в django модели?,model

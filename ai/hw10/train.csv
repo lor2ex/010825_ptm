@@ -1,0 +1,81 @@
+text,label
+как вернуть разные сериализаторы для list и detail?,view
+как переопределить create() в сериализаторе?,serializer
+как написать writeserializer и readserializer отдельно?,serializer
+как включить django debug?,settings
+что такое runpython в миграции?,migration
+как добавить unique_together в модель?,model
+как сделать смену пароля через api?,auth
+как сделать поле только для чтения в сериализаторе?,serializer
+как работает tokenauthentication?,auth
+как работает django orm?,other
+как откатить миграцию?,migration
+как замокать внешний api в тестах?,test
+как добавить данные через миграцию?,migration
+как проверить права доступа в тесте?,test
+что такое textchoices?,model
+как переопределить метод save() модели?,model
+как создать модель с self-referencing fk?,model
+зачем нужен метод validate() в сериализаторе?,serializer
+как защитить эндпоинт от анонимных пользователей?,auth
+что делать если миграции конфликтуют?,migration
+как вернуть кастомный ответ из view?,view
+как пересоздать миграции с нуля?,migration
+как создать миграцию в django?,migration
+как реализовать регистрацию пользователя?,auth
+как добавить поле в модель django?,model
+как сделать поиск по полю через api?,view
+как разделить настройки для dev и prod?,settings
+как настроить базу данных mysql в django?,settings
+как подключить env файл к django?,settings
+что такое middleware в django?,other
+как передать контекст в сериализатор?,serializer
+как фильтровать queryset во view?,view
+как ограничить доступ к определённым методам?,view
+как добавить новое приложение в installed_apps?,settings
+как настроить jwt аутентификацию в drf?,auth
+что такое squashmigrations?,migration
+что такое serializermethodfield?,serializer
+как добавить кастомную валидацию в сериализаторе?,serializer
+как настроить пагинацию во view?,view
+как создать viewset в drf?,view
+как настроить soft delete в модели?,model
+как использовать post_save сигнал?,model
+как развернуть django в docker?,other
+как сериализовать вложенные объекты?,serializer
+как писать интеграционные тесты в drf?,test
+как настроить celery beat?,other
+как переопределить perform_create?,view
+как добавить валидацию на уровне модели?,model
+как обрабатывать uniqueconstraint в сериализаторе?,serializer
+как написать unit тест для view?,test
+как настроить кэширование в django?,other
+как настроить cors для api?,auth
+как добавить фильтрацию через django-filter?,view
+как добавить кастомный action в viewset?,view
+что такое refresh token и как его обновить?,auth
+как сделать поле с выбором из списка?,model
+как переопределить get_queryset?,view
+как настроить swagger для drf?,other
+как скрыть поле пароля в ответе?,serializer
+как добавить permissions к view?,auth
+как настроить allowed_hosts?,settings
+что такое django signals?,other
+как тестировать jwt аутентификацию?,test
+что такое select_related и prefetch_related?,other
+как запустить конкретный тест?,test
+как создать кастомный permission?,auth
+как создать тестовые данные через factory_boy?,test
+как сохранить jwt токен в cookie?,auth
+как ограничить доступ только для владельца объекта?,auth
+как настроить rate limiting для api?,auth
+что такое pytest fixtures?,test
+как валидировать два поля вместе?,serializer
+почему migrate не применяет изменения?,migration
+зачем нужен related_name в foreignkey?,model
+как написать вложенный сериализатор?,serializer
+как настроить celery с django?,settings
+как работает abstractuser?,model
+как сделать кастомный менеджер модели?,model
+как настроить cors в settingspy?,settings
+как сделать вложенные роутеры?,view
